@@ -6,13 +6,13 @@ public class Main {
 
         int num = sc.nextInt();
 
-        if(num % 5 == 0) {
+        if(num % 3 == 0) {
             System.out.println("YES");
         } else {
             System.out.println("NO");
         }
 
-        if(num % 3 == 0) {
+        if(num % 5 == 0) {
             System.out.println("YES");
         } else {
             System.out.println("NO");

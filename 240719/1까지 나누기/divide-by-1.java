@@ -8,13 +8,9 @@ public class Main {
 
         int count = 1;
 
-        while(true) {
-            if(n >= 1) {
-                count++;
-                n /= count;
-            } else {
-                break;
-            }
+        while(n >= 1) {
+            count++;
+            n /= count;
         }
 
         System.out.print(count);

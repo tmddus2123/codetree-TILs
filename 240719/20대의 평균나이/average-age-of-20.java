@@ -9,11 +9,12 @@ public class Main {
 
         while(true) {
             int age = sc.nextInt();
-            if(age >= 30) {
+            if(age/10 == 2) {
+                i++;
+                sum+=age;
+            } else {
                 break;
             }
-            i++;
-            sum+=age;
         }
 
         System.out.printf("%.2f", (double) sum/i);

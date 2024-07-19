@@ -6,12 +6,12 @@ public class Main {
 
         int n = sc.nextInt();
 
-        int count = 1;
+        int count = 0;
 
         while(true) {
+            count++;
             if(n / count >= 1) {
                 n /= count;
-                count++;
             } else {
                 break;
             }

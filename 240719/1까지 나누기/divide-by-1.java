@@ -6,9 +6,8 @@ public class Main {
 
         int n = sc.nextInt();
 
-        int count = 1;
-
-        while(n >= 1) {
+        int count = 0;
+        while(n > 1) {
             count++;
             n /= count;
         }

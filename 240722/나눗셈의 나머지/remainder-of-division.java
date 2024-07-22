@@ -9,7 +9,7 @@ public class Main {
 
         int[] remain = new int[b];
 
-        while(a >= 1) {
+        while(a > 1) {
             remain[a % b]++;
             a /= b;
         }

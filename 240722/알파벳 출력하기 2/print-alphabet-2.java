@@ -5,14 +5,14 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         int num = sc.nextInt();
-        char result = 'A';
+        int result = 0;
 
         for(int i=0; i<num; i++) {
             for(int j=0; j<i; j++) {
                 System.out.print("  ");
             }
             for(int j=0; j<num - i; j++) {
-                System.out.print(result + " ");
+                System.out.print((char)('A' + result%26) + " ");
                 result++;
             }
             System.out.print("\n");

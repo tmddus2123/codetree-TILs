@@ -7,13 +7,17 @@ public class Main {
         int n = sc.nextInt();
         int m = sc.nextInt();
 
-        int max = Math.max(n, m);
+        System.out.print(n * m / calc(n, m));
+    }
 
-        for(int i=max; i<=n*m; i++) {
-            if(i % n == 0 && i % m == 0) {
-                System.out.print(i);
-                break;
+    public static int calc(int n, int m) {
+        int gcd = 1;
+
+        for(int i=1; i<=Math.min(n, m); i++) {
+            if(n % i == 0 && m % i == 0) {
+                gcd = i;
             }
         }
+        return gcd;
     }
 }

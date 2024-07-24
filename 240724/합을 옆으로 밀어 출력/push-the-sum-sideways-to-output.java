@@ -10,6 +10,8 @@ public class Main {
         for(int i=0; i<num; i++) {
             sum += sc.nextInt();
         }
+
+        String result = String.valueOf(sum);
         System.out.print(result.substring(1) + result.substring(0, 1));
     }
 }

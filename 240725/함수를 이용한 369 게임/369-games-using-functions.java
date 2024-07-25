@@ -6,24 +6,25 @@ public class Main {
         int a = sc.nextInt();
         int b = sc.nextInt();
 
-        System.out.print(isMulti(a, b));
-    }
-
-    public static int isMulti(int a, int b) {
         int result = 0;
         for(int i=a; i<=b; i++) {
-            if(i % 3 == 0 || is369(String.valueOf(i))) {
+            if(is369Number(i)) {
                 result++;
             }
         }
-        return result;
+        System.out.print(result);
     }
 
-    public static boolean is369(String n) {
-        for(int i=0; i<n.length(); i++) {
-            if(n.charAt(i) == '3' || n.charAt(i) == '6' || n.charAt(i) == '9') {
+    public static boolean is369Number(int n) {
+        return (n % 3 == 0 || is369(n));
+    }
+
+    public static boolean is369(int n) {
+        while(n >= 1) {
+            if(n % 10 == 3 || n % 10 == 6 || n % 10 == 9) {
                 return true;
             }
+            n /= 10;
         }
         return false;
     }

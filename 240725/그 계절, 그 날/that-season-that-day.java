@@ -12,7 +12,7 @@ public class Main {
             if(month >= 3 && month <= 5) {
                 System.out.print("Spring");
             } else if(month >= 6 && month <= 8) {
-                System.out.print("Summmer");
+                System.out.print("Summer");
             } else if(month >= 9 && month <= 11) {
                 System.out.print("Fall");
             } else {

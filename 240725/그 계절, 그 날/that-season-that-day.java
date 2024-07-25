@@ -18,6 +18,8 @@ public class Main {
             } else {
                 System.out.print("Winter");
             }
+        } else {
+            System.out.print(-1);
         }
     }
 

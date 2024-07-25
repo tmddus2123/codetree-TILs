@@ -9,14 +9,14 @@ public class Main {
         int count = 0;
 
         for(int i=a; i<=b; i++) {
-            if(isNumber(i)) {
+            if(isPrime(i) && isDigit(i)) {
                 count++;
             }
         }
         System.out.print(count);
     }
 
-    public static boolean isNumber(int n) {
+    public static boolean isPrime(int n) {
         if(n == 1) {
             return false;
         }
@@ -26,19 +26,15 @@ public class Main {
                 return false;
             }
         }
+        return true;
+    }
 
+    public static boolean isDigit(int n) {
         int sum = 0;
-        while(n >= 10) {
+        while(n > 0) {
             sum += n % 10;
             n /= 10;
         }
-        sum += n % 10;
-
-        if(sum % 2 == 0) {
-            return true;
-        } 
-
-        return false;
-
+        return sum % 2 == 0;
     }
 }

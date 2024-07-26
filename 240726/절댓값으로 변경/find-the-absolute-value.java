@@ -20,7 +20,7 @@ public class Main {
     public static void abs(int[] arr, int len) {
         for(int i=0; i<len; i++) {
             if(arr[i] < 0) {
-                arr[i] = Math.abs(arr[i]);
+                arr[i] = -arr[i];
             }
         }
     }

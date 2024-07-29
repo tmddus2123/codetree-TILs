@@ -2,7 +2,6 @@ import java.util.*;
 
 public class Main {
     public static int[] arr = new int[101];
-    public static int max = 0;
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -17,10 +16,9 @@ public class Main {
 
     public static int recur(int n) {
         if(n == 1) {
-            return Math.max(max, arr[n]);
+            return arr[n];
         }
 
-        max = Math.max(arr[n], max);
-        return Math.max(max, recur(n-1));
+        return Math.max(arr[n], recur(n-1));
     }
 }

@@ -18,7 +18,7 @@ public class Main {
 
         int result = 0;
         for(int i=0; i<n; i++) {
-            if(arr[i].indexOf(str) > -1) {
+            if(arr[i].indexOf(str) == 0) {
                 result++;
             }
 
@@ -26,6 +26,7 @@ public class Main {
                 System.out.print(arr[i]);
                 break;
             }
+            
         }
     }
 }

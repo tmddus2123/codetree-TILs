@@ -29,6 +29,11 @@ public class Main {
 
         int last = 0;
         for(int i=1; i<num; i++) {
+            if(!w[last].data.equals("Rain")) {
+                last++;
+                continue;
+            }
+
             if(w[i].data.equals("Rain") && w[i].date.compareTo(w[last].date) < 0) {
                 last = i;
             }

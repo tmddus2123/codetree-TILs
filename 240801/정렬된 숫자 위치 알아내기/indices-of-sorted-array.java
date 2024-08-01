@@ -17,6 +17,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         int num = sc.nextInt();
+        int[] arr = new int[num];
         Data[] d = new Data[num];
 
         for(int i=0; i<num; i++) {
@@ -33,18 +34,11 @@ public class Main {
         });
 
         for(int i=0; i<num; i++) {
-            d[i].pos = i+1;
+            arr[d[i].number - 1] = i+1;
         }
 
-        Arrays.sort(d, new Comparator<Data>() {
-            @Override
-            public int compare(Data a, Data b) {
-                return a.number - b.number;
-            }
-        });
-
-        for(Data d1 : d) {
-            System.out.print(d1.pos + " ");
+        for(int a : arr) {
+            System.out.print(a + " ");
         } 
     }
 }

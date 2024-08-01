@@ -1,25 +1,11 @@
 import java.util.*;
 
-class Position implements Comparable<Position>{
-    int x, y, dis, number, rank;
+class Position {
+    int dis, number, rank;
 
-    public Position(int x, int y, int dis, int number) {
-        this.x = x;
-        this.y = y;
+    public Position(int dis, int number) {
         this.dis = dis;
         this.number = number;
-    }
-
-    public void toRank(int rank) {
-        this.rank = rank;
-    }
-
-    @Override
-    public int compareTo(Position p) {
-        if(this.dis == p.dis) {
-            return this.number - p.number;
-        }
-        return this.dis - p.dis ;
     }
 }
 
@@ -36,24 +22,22 @@ public class Main {
             x = (x > 0) ? x : -x;
             y = (y > 0) ? y : -y; 
 
-            p[i] = new Position(x, y, x+y, i+1);
-        }
-
-        Arrays.sort(p);
-
-        for(int i=0; i<num; i++) {
-            p[i].rank = i+1;
+            p[i] = new Position(x+y, i+1);
         }
 
         Arrays.sort(p, new Comparator<Position>() {
             @Override
             public int compare(Position a, Position b) {
-                return a.number - b.number;
+                if(a.dis == b.dis) {
+                    return a.number - b.number;
+                } else {
+                    return a.dis - b.dis;
+                }
             }
         });
 
         for(int i=0; i<num; i++) {
-            System.out.println(p[i].rank);
+            System.out.println(p[i].number);
         }
     }
 }

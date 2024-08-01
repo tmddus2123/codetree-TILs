@@ -1,24 +1,14 @@
 import java.util.*;
 
-class Person implements Comparable<Person>{
+class Person {
     String name;
-    int height, type;
+    int height;
     double weight;
 
-    public Person(String name, int height, double weight, int type) {
+    public Person(String name, int height, double weight) {
         this.name = name;
         this.height = height;
         this.weight = weight;
-        this.type = type;
-    }
-
-    @Override
-    public int compareTo(Person p) {
-        if(p.type == 1) {
-            return this.name.compareTo(p.name);
-        } else {
-            return p.height - this.height;
-        }
     }
 }
 
@@ -33,17 +23,26 @@ public class Main {
             int h = sc.nextInt();
             double w = sc.nextDouble();
 
-            p[i] = new Person(name, h, w, 1);
+            p[i] = new Person(name, h, w);
         }
-        Arrays.sort(p);
+        Arrays.sort(p, new Comparator<Person>() {
+            @Override
+            public int compare(Person a, Person b) {
+                return a.name.compareTo(b.name);
+            }
+        });
 
         System.out.println("name");
         for(int i=0; i<5; i++) {
             System.out.println(p[i].name + " " + p[i].height + " " + p[i].weight);
-            p[i].type = 2;
         }
 
-        Arrays.sort(p);
+        Arrays.sort(p, new Comparator<Person>() {
+            @Override
+            public int compare(Person a, Person b) {
+                return b.height - a.height;
+            }
+        });
         System.out.println("\nheight");
         for(int i=0; i<5; i++) {
             System.out.println(p[i].name + " " +p[i].height + " " + p[i].weight);

@@ -16,7 +16,7 @@ class Student implements Comparable<Student>{
         }
 
         if(this.weight != s.weight) {
-            return s.weight - this.height;
+            return s.weight - this.weight;
         }
 
         return this.number - s.number;
@@ -31,10 +31,10 @@ public class Main {
         Student[] s = new Student[num];
 
         for(int i=0; i<num; i++) {
-            int height = sc.nextInt();
-            int weight = sc.nextInt();
+            int h = sc.nextInt();
+            int w = sc.nextInt();
 
-            s[i] = new Student(height, weight, i+1);
+            s[i] = new Student(h, w, i+1);
         }
 
         Arrays.sort(s);
@@ -42,5 +42,7 @@ public class Main {
         for(int i=0; i<num; i++) {
             System.out.println(s[i].height + " " + s[i].weight + " " + s[i].number);
         }
+
+        sc.close();
     }
 }

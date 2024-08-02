@@ -23,6 +23,10 @@ public class Main {
             d2 += endDay[i];
         }
 
+        if(m1 == m2) {
+            d2++;
+        }
+
         System.out.print(d2 - d1);
     }
 }

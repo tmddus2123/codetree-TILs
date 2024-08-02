@@ -13,8 +13,17 @@ public class Main {
             int x = sc.nextInt();
             String dir = sc.next();
 
-            for(int j=stand; j<=stand + x; j++) {
-                line[i]++;
+
+            if(dir.equals("R")) {
+                for(int j=stand; j<stand + x; j++) {
+                    line[j]++;
+                }
+                stand += x;
+            } else if(dir.equals("L")) {
+                for(int j=stand - x; j<stand; j++) {
+                    line[j]++;
+                }
+                stand -= x;
             }
         }
 

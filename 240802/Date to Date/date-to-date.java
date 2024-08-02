@@ -15,18 +15,14 @@ public class Main {
         int m2 = sc.nextInt();
         int d2 = sc.nextInt();
 
-        for(int i=0; i<m1; i++) {
+        for(int i=0; i<m1-1; i++) {
             d1 += endDay[i];
         }
 
-        for(int i=0; i<m2; i++) {
+        for(int i=0; i<m2-1; i++) {
             d2 += endDay[i];
         }
 
-        if(m1 == m2) {
-            d2++;
-        }
-
-        System.out.print(d2 - d1);
+        System.out.print(d2 - d1 + 1);
     }
 }

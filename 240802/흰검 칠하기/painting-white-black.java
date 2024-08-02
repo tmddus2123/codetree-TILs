@@ -26,6 +26,9 @@ public class Main {
                 min = Math.min(min, standard - x);
 
                 for(int j=standard-x; j<=standard; j++) {
+                    if(color[j] == 1) {
+                        continue;
+                    }
                     tile[j]++;
                     color[j] = 1;
                 }
@@ -34,6 +37,9 @@ public class Main {
                 max = Math.max(max, standard + x);
 
                 for(int j=standard; j<=standard+x; j++) {
+                    if(color[j] == -1) {
+                        continue;
+                    }
                     tile[j]++;
                     color[j] = -1;
                 }

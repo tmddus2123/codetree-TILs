@@ -2,12 +2,9 @@ import java.util.*;
 
 public class Main {
 
-    public static int[] tile = new int[200001];
+    public static int[] black = new int[200001];
+    public static int[] white = new int[200001];
     public static int[] color = new int[200001];
-
-    public static final String BLACK = "-1";
-    public static final String WHITE = "1";
-    public static final String GRAY = "0";
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -26,10 +23,7 @@ public class Main {
                 min = Math.min(min, standard - x);
 
                 for(int j=standard-x; j<=standard; j++) {
-                    if(color[j] == 1) {
-                        continue;
-                    }
-                    tile[j]++;
+                    white[j]++;
                     color[j] = 1;
                 }
                 standard -= x;
@@ -37,10 +31,7 @@ public class Main {
                 max = Math.max(max, standard + x);
 
                 for(int j=standard; j<=standard+x; j++) {
-                    if(color[j] == -1) {
-                        continue;
-                    }
-                    tile[j]++;
+                    black[j]++;
                     color[j] = -1;
                 }
                 standard += x;
@@ -49,7 +40,7 @@ public class Main {
 
         int b=0, w=0, g=0;
         for(int i=min; i<=max; i++) {
-            if(tile[i] >= 4) {
+            if(white[i] >= 2 && black[i] >= 2) {
                 g++;
             } else {
                 if(color[i] == 1) {

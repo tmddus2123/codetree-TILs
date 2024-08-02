@@ -19,7 +19,7 @@ public class Main {
         }
 
         int max = arr[0];
-        for(int i=1; i<k; i++) {
+        for(int i=1; i<n; i++) {
             max = Math.max(max, arr[i]);
         }
         System.out.print(max);

@@ -22,6 +22,7 @@ public class Main {
                 }
             }
         }
+        int sum = 0;
         int minx = 2000;
         int maxx = 0;
         int miny = 2000;
@@ -29,6 +30,7 @@ public class Main {
         for(int i=0; i<2001; i++) {
             for(int j=0; j<2001; j++) {
                 if(rect[i][j] == 1) {
+                    sum++;
                     if(maxx < i) {
                         maxx = i;
                     }
@@ -47,6 +49,10 @@ public class Main {
                 }
             }
         }
-        System.out.print((maxx - minx + 1) * (maxy - miny + 1));
+        if(sum == 0) {
+            System.out.print(0);
+        } else {
+            System.out.print((maxx - minx + 1) * (maxy - miny + 1));
+        }
     }
 }

@@ -14,7 +14,7 @@ public class Main {
             int x2 = sc.nextInt() + 100;
             int y2 = sc.nextInt() + 100;
 
-            int color = (n == 0) ? 1 : 2;
+            int color = (n % 2 == 0) ? 1 : 2;
 
             for(int i=x1; i<x2; i++) {
                 for(int j=y1; j<y2; j++) {

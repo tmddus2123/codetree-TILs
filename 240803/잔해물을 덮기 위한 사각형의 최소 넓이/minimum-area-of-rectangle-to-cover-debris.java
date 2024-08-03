@@ -16,18 +16,37 @@ public class Main {
 
             int a = (n == 0) ? 1 : 0;
 
-            for(int i=x1; i<=x2; i++) {
-                for(int j=y1; j<=y2; j++) {
+            for(int i=x1; i<x2; i++) {
+                for(int j=y1; j<y2; j++) {
                     rect[i][j] = a;
                 }
             }
         }
-        int sum = 0;
+        int minx = 2000;
+        int maxx = 0;
+        int miny = 2000;
+        int maxy = 0;
         for(int i=0; i<2001; i++) {
             for(int j=0; j<2001; j++) {
-                sum += rect[i][j];
+                if(rect[i][j] == 1) {
+                    if(maxx < i) {
+                        maxx = i;
+                    }
+
+                    if(minx > i) {
+                        minx = i;
+                    }
+
+                    if(maxy < j) {
+                        maxy = j;
+                    }
+
+                    if(miny > j) {
+                        miny = j;
+                    }
+                }
             }
         }
-        System.out.print(sum);
+        System.out.print((maxx - minx + 1) * (maxy - miny + 1));
     }
 }

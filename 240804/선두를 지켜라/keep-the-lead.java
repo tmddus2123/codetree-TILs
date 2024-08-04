@@ -11,27 +11,31 @@ public class Main {
         int m = sc.nextInt();
 
         int time = 0;
-
+        int vec = 0;
         for(int i=0; i<n; i++) {
             int v = sc.nextInt();
             int t = sc.nextInt();
 
+            vec += v;
             while(t-- > 0) {
-                arrA[time++] = v;
+                arrA[time++] = vec;
             }
         }
 
         time = 0;
+        vec = 0;
+        
         for(int i=0; i<m; i++) {
             int v = sc.nextInt();
             int t = sc.nextInt();
 
+            vec += v;
             while(t-- > 0) {
-                arrB[time++] = v;
+                arrB[time++] = vec;
             }
         }
 
-        String head = (arrA[0] > arrB[0]) ? "A" : "B";
+        String head = (arrA[0] >= arrB[0]) ? "A" : "B";
         int count = 0;
         for(int i=0; i<time; i++) {
             if(head.equals("A")) {

@@ -11,17 +11,17 @@ public class Main {
             arr[i] = sc.nextInt();
         }
 
-        int stand = arr[0];
         int max = 1;
         int count = 1;
         for(int i=1; i<num; i++) {
             if(arr[i-1] == arr[i]) {
                 count++;
             } else {
-                if(max < count) {
-                    max = count;
-                }
                 count = 1;
+            }
+
+            if(max < count) {
+                max = count;
             }
         }
         System.out.print(max);

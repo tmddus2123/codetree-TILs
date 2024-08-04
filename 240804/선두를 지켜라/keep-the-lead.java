@@ -10,28 +10,25 @@ public class Main {
         int n = sc.nextInt();
         int m = sc.nextInt();
 
-        int time = 0;
-        int vec = 0;
+        int time = 1;
         for(int i=0; i<n; i++) {
             int v = sc.nextInt();
             int t = sc.nextInt();
 
             while(t-- > 0) {
-                vec += v;
-                arrA[time++] = vec;
+                arrA[time] = arrA[time - 1] + v;
+                time++;
             }
         }
 
-        time = 0;
-        vec = 0;
-        
+        time = 1;
         for(int i=0; i<m; i++) {
             int v = sc.nextInt();
             int t = sc.nextInt();
 
             while(t-- > 0) {
-                vec += v;
-                arrB[time++] = vec;
+                arrB[time] = arrB[time - 1] + v;
+                time++;
             }
         }
 

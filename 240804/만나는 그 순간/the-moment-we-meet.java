@@ -2,8 +2,8 @@ import java.util.*;
 
 public class Main {
 
-    public static int[] arr1 = new int[1001];
-    public static int[] arr2 = new int[1001];
+    public static int[] arr1 = new int[1000001];
+    public static int[] arr2 = new int[1000001];
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);

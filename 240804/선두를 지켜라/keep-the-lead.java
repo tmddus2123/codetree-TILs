@@ -16,8 +16,8 @@ public class Main {
             int v = sc.nextInt();
             int t = sc.nextInt();
 
-            vec += v;
             while(t-- > 0) {
+                vec += v;
                 arrA[time++] = vec;
             }
         }
@@ -29,8 +29,8 @@ public class Main {
             int v = sc.nextInt();
             int t = sc.nextInt();
 
-            vec += v;
             while(t-- > 0) {
+                vec += v;
                 arrB[time++] = vec;
             }
         }

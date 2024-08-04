@@ -32,7 +32,7 @@ public class Main {
             }
         }
 
-        String head = (arrA[0] >= arrB[0]) ? "A" : "B";
+        String head = (arrA[1] >= arrB[1]) ? "A" : "B";
         int count = 0;
         for(int i=0; i<time; i++) {
             if(head.equals("A")) {

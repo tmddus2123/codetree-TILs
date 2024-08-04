@@ -11,53 +11,41 @@ public class Main {
         int n = sc.nextInt();
         int m = sc.nextInt();
 
-        int total1 = 0;
-        int time = 0;
-        int pos = 0;
+        int time = 1;
         for(int i=0; i<n; i++) {
             String dir = sc.next();
             int t = sc.nextInt();
-            total1 += t;
 
-            if(dir.equals("L")) {
-                while(t > 0) {
-                    arr1[time++] = pos--;
-                    t--;
+            while(t-- > 0) {
+                if(dir.equals("R")) {
+                    arr1[time] = arr1[time - 1] + 1;
+                } else {
+                    arr1[time] = arr1[time - 1] - 1;
                 }
-            } else {
-                while(t > 0) {
-                    arr1[time++] = pos++;
-                    t--;
-                }
+                time++;
             }
             
         }
 
-        int total2 = 0;
-        time = 0;
-        pos = 0;
+        time = 1;
         for(int i=0; i<m; i++) {
             String dir = sc.next();
             int t = sc.nextInt();
-            total2 += t;
 
-            if(dir.equals("L")) {
-                while(t > 0) {
-                    arr2[time++] = pos--;
-                    t--;
+            while(t-- > 0) {
+                if(dir.equals("R")) {
+                    arr2[time] = arr2[time - 1] + 1;
+                } else {
+                    arr2[time] = arr2[time - 1] - 1;
                 }
-            } else {
-                while(t > 0) {
-                    arr2[time++] = pos++;
-                    t--;
-                }
+                time++;
             }
             
         }
 
         int result = -1;
 
-        for(int i=1; i<Math.max(total1, total2); i++) {
+        for(int i=1; i<time; i++) {
             if(arr1[i] == arr2[i]) {
                 result = i;
                 break;

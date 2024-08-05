@@ -29,19 +29,21 @@ public class Main {
 
 
         for(int i=1; i<251; i++) {
-            if(timeA[i] != 0) { //악수 진행
-                //System.out.println(i + "초 A " + timeA[i] + " B " + timeB[i]);
-                if(infect[timeA[i]] > 0 && infect[timeB[i]] > 0) { // 둘 다 감염
-                    infect[timeA[i]]--;
-                    infect[timeB[i]]--;
-                } else if(infect[timeA[i]] > 0) { // 감염되었으면 감염 진행
-                    infect[timeB[i]] = K;
-                    test[timeB[i]] = true;
-                    infect[timeA[i]]--;
-                } else if(infect[timeB[i]] > 0) {
-                    infect[timeA[i]] = K;
-                    test[timeA[i]] = true;
-                    infect[timeB[i]]--;
+            if(timeA[i] > 0 && timeB[i] > 0) { //악수 진행
+                int x = timeA[i];
+                int y = timeB[i];
+
+                if(test[x] && test[y]) { // 둘 다 감염
+                    infect[x]--;
+                    infect[y]--;
+                } else if(infect[x] > 0) { // 감염되었으면 감염 진행
+                    infect[y] = K;
+                    test[y] = true;
+                    infect[x]--;
+                } else if(infect[y] > 0) {
+                    infect[x] = K;
+                    test[x] = true;
+                    infect[y]--;
                 }
             }
         }

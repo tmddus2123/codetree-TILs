@@ -18,7 +18,7 @@ public class Main {
                 nx = nx + dx[0] * dis;
             } else if(dir.equals("N")) {
                 ny = ny + dy[1] * dis;
-            } else if(dir.equals("E")) {
+            } else if(dir.equals("W")) {
                 nx = nx + dx[2] * dis;
             } else {
                 ny = ny + dy[3] * dis;

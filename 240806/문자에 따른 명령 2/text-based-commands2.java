@@ -18,8 +18,8 @@ public class Main {
             } else if(order[i].equals("R")) {
                 dir = (dir + 3) % 4;
             } else { //F
-                nx = dx[dir];
-                ny = dy[dir];
+                nx += dx[dir];
+                ny += dy[dir];
             }
         }
 

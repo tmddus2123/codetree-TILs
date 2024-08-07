@@ -37,7 +37,7 @@ public class Main {
                 x += dx[d];
                 y += dy[d];
 
-                if(map[x][y] == -1) {
+                if(map[x][y] == -1 && result == -1) {
                     result = count;
                     break;
                 }

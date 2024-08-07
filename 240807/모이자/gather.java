@@ -10,13 +10,16 @@ public class Main {
             arr[i] = sc.nextInt();      
         }
 
-        int min = 100000;
+        int min = 0;
         for(int i=0; i<num; i++) {
             int dis = 0;
             for(int j=0; j<num; j++) {
 
                 // i 번째 집으로 모이기
                 dis += Math.abs(i - j) * arr[j];
+            }
+            if(i == 0) {
+                min = dis;
             }
             min = Math.min(min, dis);
         }

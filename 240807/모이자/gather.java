@@ -10,7 +10,7 @@ public class Main {
             arr[i] = sc.nextInt();      
         }
 
-        int min = 10000;
+        int min = 100000;
         for(int i=0; i<num; i++) {
             int dis = 0;
             for(int j=0; j<num; j++) {

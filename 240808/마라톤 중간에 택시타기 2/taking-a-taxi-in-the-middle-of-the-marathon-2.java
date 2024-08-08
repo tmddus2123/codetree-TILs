@@ -30,9 +30,9 @@ public class Main {
             copyy[i] = copyy[i-1];
 
             distance = 0;
+
             for(int j=1; j<num; j++) {
-                //System.out.println(copyx[j] + " " + copyy[j]);
-                distance = distance + Math.abs(copyx[j-1] - copyx[j]) + Math.abs(copyy[j-1] + copyy[j]); 
+                distance = distance + Math.abs(copyx[j-1] - copyx[j]) + Math.abs(copyy[j-1] - copyy[j]); 
             }
             min = Math.min(min, distance);
         }

@@ -18,7 +18,7 @@ public class Main {
         int  min = 0;
         int distance = 0;
         for(int i=1; i<num; i++) {
-            distance = distance + Math.abs(x[i-1] - x[i]) + Math.abs(y[i-1] + y[i]);
+            distance = distance + Math.abs(x[i-1] - x[i]) + Math.abs(y[i-1] - y[i]);
         }
 
         min = distance;

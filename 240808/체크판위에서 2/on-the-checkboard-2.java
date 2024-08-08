@@ -17,7 +17,7 @@ public class Main {
             for(int j=1; j<c-1; j++) {
                 for(int n=i+1; n<r-1; n++) {
                     for(int m=j+1; m<c-1; m++) {
-                        if(arr[i][j].equals("B") && arr[n][m].equals("W")) {
+                        if(arr[0][0].equals("W") && arr[i][j].equals("B") && arr[n][m].equals("W") && arr[r-1][c-1].equals("B")) {
                             count++;
                         }
                     }

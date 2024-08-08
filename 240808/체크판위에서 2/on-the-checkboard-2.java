@@ -13,11 +13,14 @@ public class Main {
             }
         }
         int count = 0;
+        String start = (arr[0][0].equals("W")) ? "W" : "B";
+        String end = (start.equals("W")) ? "B" : "W";
+
         for(int i=1; i<r-1; i++) {
             for(int j=1; j<c-1; j++) {
                 for(int n=i+1; n<r-1; n++) {
                     for(int m=j+1; m<c-1; m++) {
-                        if(arr[0][0].equals("W") && arr[i][j].equals("B") && arr[n][m].equals("W") && arr[r-1][c-1].equals("B")) {
+                        if(arr[i][j].equals(end) && arr[n][m].equals(start) && arr[r-1][c-1].equals(end)) {
                             count++;
                         }
                     }

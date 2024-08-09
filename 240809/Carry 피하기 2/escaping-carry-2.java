@@ -20,9 +20,16 @@ public class Main {
                     int n2 = arr[j];
                     int n3 = arr[k];
                     boolean result = true;
-                    while(n1 > 10 || n2 > 10 || n3 > 10) {
-                        if(10 < (n1 % 10) + (n2 % 10) + (n3 % 10)) {
-                           result = false;
+                    while(true) {
+                        if(n1 < 10 && n2 < 10 && n3 < 10) {
+                            if(10 <= n1 + n2 + n3) {
+                                result = false;
+                            }
+                            break;
+                        }
+                        
+                        if(10 <= (n1 % 10) + (n2 % 10) + (n3 % 10)) {
+                            result = false;
                             break;
                         }
                         n1 /= 10;

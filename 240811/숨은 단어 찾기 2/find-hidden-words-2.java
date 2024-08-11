@@ -2,6 +2,7 @@ import java.util.*;
 
 public class Main {
 
+    // 8방향을 위한 dx, dy 배열
     public static int[] dx = {1, 1, 1, 0, -1, -1, -1, 0};
     public static int[] dy = {1, 0, -1, -1, -1, 0, 1, 1};
 
@@ -13,43 +14,48 @@ public class Main {
         n = sc.nextInt();
         m = sc.nextInt();
 
-        String[][] arr = new String[n][m];
+        String[] arr = new String[n];
 
         for(int i=0; i<n; i++) {
-            arr[i] = sc.next().split("");
+            arr[i] = sc.next();
         }
 
         int count = 0;
         for(int i=0; i<n; i++) {
             for(int j=0; j<m; j++) {
 
-                if(!arr[i][j].equals("L")) {
+                // 현재 위치가 'L'이 아닌 경우 건너뜀
+                if(arr[i].charAt(j) != 'L') {
                     continue;
                 }
 
-
+                // 8방향으로 탐색
                 for(int l = 0; l<8; l++) {
-                    int result = 0;
-                    int x = i, y = j; 
+                    int x = i;
+                    int y = j;
+                    boolean found = true;
 
-                    while(true) {
+                    for(int step = 1; step < 3; step++) {
                         x += dx[l];
                         y += dy[l];
-                        if(isRange(x, y) && arr[x][y].equals("E")) {
-                            result++;
-                        } else {
+
+                        // 다음 위치가 범위를 벗어나거나 'E'가 아닐 경우
+                        if(!isRange(x, y) || arr[x].charAt(y) != 'E') {
+                            found = false;
                             break;
                         }
                     }
-                    if(result == 2){
+
+                    if(found) {
                         count++;
                     }
                 }
             }
         }
         System.out.print(count);
-    
     }
+
+    // x, y가 범위 내에 있는지 확인하는 함수
     public static boolean isRange(int x, int y) {
         return x >= 0 && x < n && y >= 0 && y < m;
     }

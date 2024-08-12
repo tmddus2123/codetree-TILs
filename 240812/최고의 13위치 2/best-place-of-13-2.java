@@ -17,7 +17,7 @@ public class Main {
         int max1 = 0;
         for(int i=0; i<num; i++) {
             for(int j=0; j<num-2; j++) {
-                if(max1 < arr[i][j] + arr[i][j+1] + arr[i][j+2]) {
+                if(max1 <= arr[i][j] + arr[i][j+1] + arr[i][j+2]) {
                     max1 = arr[i][j] + arr[i][j+1] + arr[i][j+2];
                     x = i;
                     y = j;

@@ -14,9 +14,11 @@ public class Main {
             sum += arr[i];
         }
 
-        int min = sum; 
+        int min = Integer.MAX_VALUE; 
         for(int i=0; i<n; i++) {
             for(int j=i+1; j<n; j++) {
+                //int total = sum - (arr[i] + arr[j]);
+                //System.out.println("2개 제외한 합 : " + total);
                 min = Math.min(min, Math.abs(s - (sum - (arr[i] + arr[j]))));       
             }
         }

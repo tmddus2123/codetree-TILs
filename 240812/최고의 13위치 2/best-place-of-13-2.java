@@ -28,7 +28,7 @@ public class Main {
         int max2 = 0;
         for(int i=0; i<num; i++) {
             for(int j=0; j<num-2; j++) {
-                if(i == x && (j == y || j == y+1 || j == y+2)) {
+                if(i == x && (j == y || j == y+1 || j == y+2 || j+1 == y || j+2 == y)) {
                     continue;
                 }
                 max2 = Math.max(max2, arr[i][j] + arr[i][j+1] + arr[i][j+2]);

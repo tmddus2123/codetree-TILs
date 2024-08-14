@@ -19,15 +19,19 @@ public class Main {
         for(int i=1; i<101; i++) {
 
             int g = 0, h = 0;
+            int start = 0;
             for(int j=i; j<101; j++) {
                 if(arr[j] != 0) {
+                    if(start == 0) {
+                        start = j;
+                    }
                     if(arr[j] == 1) {
                         g++;
                     } else {
                         h++;
                     }
                     if(g == h || (g == 0 && h >= 2) || (g >= 2 && h == 0)) {
-                        max = Math.max(max, j - i - 1);
+                        max = Math.max(max, j - start );
                     }
                 }
 

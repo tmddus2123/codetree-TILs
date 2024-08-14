@@ -26,7 +26,7 @@ public class Main {
                     } else {
                         h++;
                     }
-                    if(g == h) {
+                    if(g == h || (g == 0 && h >= 2) || (g >= 2 && h == 0)) {
                         max = Math.max(max, j - i - 1);
                     }
                 }

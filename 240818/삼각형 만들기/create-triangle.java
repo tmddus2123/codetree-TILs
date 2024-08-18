@@ -13,23 +13,27 @@ public class Main {
             y[i] = sc.nextInt();
         }
 
-        int width = 0;
-        int height = 0;
+        int area = 0;
         for(int i=0; i<num; i++) {
-            for(int j=0; j<num; j++) {
-                if(i == j) {
-                    continue;
+            for(int j=i+1; j<num; j++) {
+                for(int k=j+1; k<num; k++) {
+                    if(i == j || j == k || i == k) {
+                        continue;
+                    }
+
+                    if(x[i] != x[j] && x[i] != x[k] && x[j] != x[k]) {
+                        continue;
+                    }
+
+                    if(y[i] != y[j] && y[i] != y[k] && y[j] != y[k]) {
+                        continue;
+                    }
+
+                    area = (x[i]*y[j] + x[j]*y[k] + x[k]*y[i]) - (x[j]*y[i] + x[k]*y[j] + x[i]*y[k]);
                 }
 
-                if(x[i] == x[j]) { // y축 평행
-                    height = Math.max(height,  Math.abs(y[i] - y[j]));
-                }
-
-                if(y[i] == y[j]) { // x축 평행
-                    width = Math.max(width, Math.abs(x[i] - x[j]));
-                }
             }
         }
-        System.out.print(width * height);
+        System.out.print(Math.abs(area));
     }
 }

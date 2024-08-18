@@ -17,10 +17,6 @@ public class Main {
         for(int i=0; i<num; i++) {
             for(int j=i+1; j<num; j++) {
                 for(int k=j+1; k<num; k++) {
-                    if(i == j || j == k || i == k) {
-                        continue;
-                    }
-
                     if(x[i] != x[j] && x[i] != x[k] && x[j] != x[k]) {
                         continue;
                     }

@@ -13,7 +13,7 @@ public class Main {
             y[i] = sc.nextInt();
         }
 
-        int area = 0;
+        int result = 0;
         for(int i=0; i<num; i++) {
             for(int j=i+1; j<num; j++) {
                 for(int k=j+1; k<num; k++) {
@@ -29,11 +29,12 @@ public class Main {
                         continue;
                     }
 
-                    area = (x[i]*y[j] + x[j]*y[k] + x[k]*y[i]) - (x[j]*y[i] + x[k]*y[j] + x[i]*y[k]);
+                    int area = (x[i]*y[j] + x[j]*y[k] + x[k]*y[i]) - (x[j]*y[i] + x[k]*y[j] + x[i]*y[k]);
+                    result = Math.max(result, Math.abs(area));
                 }
 
             }
         }
-        System.out.print(Math.abs(area));
+        System.out.print(result);
     }
 }

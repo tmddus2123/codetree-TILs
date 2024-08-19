@@ -16,8 +16,12 @@ public class Main {
             int m = sc.nextInt(); // m번째 치즈
             int t = sc.nextInt(); // t초에 먹음
 
-            arr[p][m] = t;
 
+            if(arr[p][m] != 0) {
+                arr[p][m] = arr[p][m] < t ? arr[p][m] : t;
+            } else {
+               arr[p][m] = t;
+            }
         }
 
 
@@ -40,10 +44,14 @@ public class Main {
                 }
             }
         }
+
         // 썩은 치즈 누가 먹었는지
         for(int i=1; i<=N; i++) {
             for(int j=1; j<=M; j++) {
-                if(cheese[j] == max && arr[i][j] != 0) { // 썩은 치즈
+                if(cheese[j] != max) {
+                    continue;
+                }
+                if(arr[i][j] != 0) { // 썩은 치즈
                     result[i]++;
                 }
             }

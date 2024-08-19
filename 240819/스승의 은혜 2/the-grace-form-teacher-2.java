@@ -12,12 +12,14 @@ public class Main {
             price[i] = sc.nextInt();
         }
 
+        Arrays.sort(price);
+
         int max = 0;
         for(int i=0; i<num; i++) {
             if(price[i]/2 > budget) {
                 continue;
             }
-            int sum = price[i]/2;
+            int sum = price[i] / 2;
             int count = 1;
             for(int j=0; j<num; j++) {
                 if(i == j) {

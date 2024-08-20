@@ -9,25 +9,25 @@ public class Main {
         int[] price = new int[n];
         int[] fee = new int[n];
 
-        for(int i=0; i<5; i++) {
+        for(int i=0; i<n; i++) {
             price[i] = sc.nextInt();
             fee[i] = sc.nextInt();
         }
 
         int max = 0;
-        for(int i=0; i<5; i++) {
+        for(int i=0; i<n; i++) {
             int[] salePrice = price.clone();
 
             salePrice[i] = salePrice[i]/2;
             
-            for(int j=0; j<5; j++) {
+            for(int j=0; j<n; j++) {
                 salePrice[j] += fee[j];
             }
 
             Arrays.sort(salePrice);
             int sum = 0;
             int count = 0;
-            for(int j=0; j<5; j++) {
+            for(int j=0; j<n; j++) {
                 sum += salePrice[j];
                 if(sum > budget) {
                     break;

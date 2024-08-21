@@ -9,13 +9,13 @@ public class Main {
 
         int count = 0;
         for(int i=x; i<=y; i++) {
-            String[] arr = String.valueOf(i).split("");
+            String num = String.valueOf(i);
 
-            int len = arr.length;
+            int len = num.length();
 
             boolean result = true;
             for(int j=0; j<len; j++) {
-                if(!arr[j].equals(arr[len-j-1])) {
+                if(num.charAt(j) != num.charAt(len-j-1)) {
                     result = false;
                     break;
                 }

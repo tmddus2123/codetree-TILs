@@ -1,3 +1,4 @@
+// https://www.codetree.ai/training-field/search/problems/vegetables-growing-in-the-field?&utm_source=clipboard&utm_medium=text
 import java.util.*;
 
 public class Main {
@@ -23,15 +24,12 @@ public class Main {
             x[i] = a;
             y[i] = b;
         }
-
         int area = 0;
         for(int i=0; i<5; i++) {
             area += x[i] * y[i+1] - y[i] * x[i+1];
         }
-
         area += x[5] * y[0] + y[5] * x[0];
 
         System.out.println(Math.abs(area) / 2 * num);
-
     }
 }
